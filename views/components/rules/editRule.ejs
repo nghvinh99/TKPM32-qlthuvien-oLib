@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs', {title: title}) %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs') %>
+    <%- include('../../navigator/navbar.ejs') %>
+    <%- include('../../elements/breadcrumb.ejs') %>
+    <section class="forms">
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header>
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="row">
+          Hiện quy định + input ->> update
+        </div>
+      </div>
+    </section>
+    <%- include('../../elements/footer.ejs') %>
+    <%- include('../../elements/scripts.ejs') %>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs',{ title: title}); %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs'); %>
+    <%- include('../../navigator/navbar.ejs'); %>
+    <%- include('../../elements/breadcrumb.ejs'); %>
+    <section>
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header>
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="card">
+              <div class="card-header d-flex align-items-center">
+                <h4>Chi tiết</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Mã sách:</label>
+                  <div class="text">Mã sách</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Tên sách:</label>
+                  <div class="text">Tên sách</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Tác giả:</label>
+                  <div class="text">Tác giả</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Thể loại:</label>
+                  <div class="text">Thể loại</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Ngôn ngữ:</label>
+                  <div class="text">Ngôn ngữ</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Năm xuất bản:</label>
+                  <div class="text">Năm xuất bản</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Năm nhập:</label>
+                  <div class="text">Năm nhập</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Nhà xuất bản:</label>
+                  <div class="text">Nhà xuất bản</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Giá bìa:</label>
+                  <div class="text">Giá bìa</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Số lượng:</label>
+                  <div class="text">Số lượng</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Tình trạng:</label>
+                  <div class="text">Tình trạng</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <img src="/img/info.jpg" class="img-fluid">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" style="text-align: center;">
+            <button type="button" onclick="window.history.back();" class="btn btn-secondary">Quay
+              lại</button>
+            <button type="button" class="btn btn-primary"
+            onclick="location.href='/books/borrow-request'">Đăng kí mượn</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('../../elements/footer.ejs'); %>
+  </div>
+  <%- include('../../elements/scripts.ejs'); %>
+</body>
+
+</html>

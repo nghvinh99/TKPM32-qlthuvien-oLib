@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs',{ title: title}); %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs'); %>
+    <%- include('../../navigator/navbar.ejs'); %>
+    <%- include('../../elements/breadcrumb.ejs'); %>
+    <section>
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header>
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="row">
+          <div class="col-sm-12">
+            <form class="card">
+              <div class="card-header d-flex align-items-center">
+                <h4>Chi tiết</h4>
+              </div>
+              <div class="card-body">
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Mã độc giả:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Ngày mượn:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Hạm trả:</label>
+                  <input class="col-sm-9 form-control" disabled></input>
+                </div>
+              </div>
+              <%- include('./detailInfoListMng.ejs'); %>
+            </form>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-sm-12" style="text-align: center;">
+            <button type="button" onclick="window.history.back();" class="btn btn-secondary">Quay
+              lại</button>
+            <button type="submit" class="btn btn-primary">Thêm thẻ mượn</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('../../elements/footer.ejs'); %>
+  </div>
+  <%- include('../../elements/scripts.ejs'); %>
+</body>
+
+</html>

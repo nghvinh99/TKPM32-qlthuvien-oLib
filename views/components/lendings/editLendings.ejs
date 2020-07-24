@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs', {title: title}) %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs') %>
+    <%- include('../../navigator/navbar.ejs') %>
+    <%- include('../../elements/breadcrumb.ejs') %>
+    <section>
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header class="row">
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <label for="id">Mã thẻ mượn:</label>
+                <div class="text" name="id">Mã thẻ mượn</div>
+              </div>
+              <div class="col-sm-3">
+                <label for="name">Tên độc giả:</label>
+                <div class="text" name="name" 
+                onclick="location.href = '/readers/edit/1';"
+                style="cursor: pointer;">Ngô Bá Khá</div></td>
+              </div>
+              <div class="col-sm-3">
+                <label for="lendDate">Ngày mượn:</label>
+                <input type="text" placeholder="DD/MM/YYYY" value="01/01/2020" class="form-control">
+              </div>
+              <div class="col-sm-3">
+                <label for="returnDate">Hạn trả:</label>
+                <input type="text" placeholder="DD/MM/YYYY" value="01/01/2020" class="form-control">
+              </div>
+            </div>
+              <%- include('./detailInfoListMng.ejs'); %>
+            </div>
+          </div>
+        </div>
+    </section>
+    <%- include('../../elements/footer.ejs') %>
+    <%- include('../../elements/scripts.ejs') %>
+  </div>
+</body>
+
+</html>

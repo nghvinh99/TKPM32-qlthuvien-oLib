@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs',{ title: title}); %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs'); %>
+    <%- include('../../navigator/navbar.ejs'); %>
+    <%- include('../../elements/breadcrumb.ejs'); %>
+    <section>
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header>
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header d-flex align-items-center">
+                <h4>Bộ lọc</h4>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal">
+                  <div class="form-group row">
+                    <label class="col-sm-2 form-control-label">Tên sách</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control">
+                    </div>
+                    <label class="col-sm-2 form-control-label">Tác giả</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="line"></div>
+                  <div class="form-group row">
+                    <label class="col-sm-2 form-control-label">Năm xuất bản</label>
+                    <div class="col-sm-4">
+                      <select name="year" class="form-control">
+                        <option value="" selected>Chọn năm</option>
+                        <option value="">2020</option>
+                        <option value="">...</option>
+                        <option value="">1990</option>
+                      </select>
+                    </div>
+                    <label class="col-sm-2 form-control-label">Nhà xuất bản</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="line"></div>
+                  <div class="form-group row">
+                    <label class="col-sm-2 form-control-label">Thể loại</label>
+                    <div class="col-sm-4">
+                      <select name="type" class="form-control">
+                        <option value="" selected>Chọn thể loại</option>
+                        <option value="">Giải trí</option>
+                        <option value="">Văn học</option>
+                        <option value="">Kinh dị</option>
+                        <option value="">...</option>
+                      </select>
+                    </div>
+                    <label class="col-sm-2 form-control-label">Ngôn ngữ</label>
+                    <div class="col-sm-4">
+                      <select name="type" class="form-control">
+                        <option value="" selected>Chọn ngôn ngữ</option>
+                        <option value="">Tiếng Anh</option>
+                        <option value="">Tiếng Việt</option>
+                        <option value="">...</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="line"></div>
+                  <div class="form-group row">
+                    <label class="col-sm-2 form-control-label">Tình trạng</label>
+                    <div class="col-sm-4">
+                      <label class="checkbox-inline">
+                        <input id="inlineCheckbox1" name="state" type="radio" value="option1">
+                        Tất cả
+                      </label>
+                      <label class="checkbox-inline">
+                        <input id="inlineCheckbox2" name="state" type="radio" value="option2">
+                        Chưa được mượn hết
+                      </label>
+                    </div>
+                  </div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="form-group row">
+                    <div class="col-sm-4 offset-sm-2" style="margin-left:auto; margin-right: auto;">
+                      <button type="button" onclick="window.history.back();" class="btn btn-secondary">Quay
+                        lại</button>
+                      <button type="submit" class="btn btn-primary">Lọc</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <h1 style="color:red">KHI NHẤN "LỌC" RA KẾT QUẢ NHƯ BÊN DƯỚI</h1>
+                <%- include('./booksList.ejs'); %>
+                <%- include('./booksListMng.ejs') %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('../../elements/footer.ejs'); %>
+  </div>
+  <%- include('../../elements/scripts.ejs'); %>
+</body>
+
+</html>

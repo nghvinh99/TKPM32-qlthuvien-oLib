@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs', {title: title}) %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs') %>
+    <%- include('../../navigator/navbar.ejs') %>
+    <%- include('../../elements/breadcrumb.ejs'); %>
+    <section class="forms">
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header>
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card card-profile">
+              <div style="background-image: url(img/photos/paul-morris-116514-unsplash.jpg);" class="card-header"></div>
+              <div class="card-body text-center">
+                <img src="/img/user.png" class="card-profile-img" 
+                onclick="document.getElementById('avatarImg').click();" 
+                style="cursor: pointer;" data-toggle="tooltip" title="Đổi ảnh đại diện">
+                <h3 class="mb-3">Tên</h3>
+                <p class="mb-4">Role</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <form class="card">
+              <div class="card-body">
+                <h3 class="card-title">Chi tiết</h3>
+                <div class="row">
+                  <input type="file" id="avatarImg" style="display: none;"></input>
+                  <div class="col-md-5">
+                    <div class="form-group mb-4">
+                      <label class="form-label">Họ tên</label>
+                      <input type="text" placeholder="Họ tên" value="Ngô Bá Khá" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="form-group mb-4">
+                      <label class="form-label">Tài khoản</label>
+                      <input type="text" placeholder="Username" value="Khabanh123" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="form-group mb-4">
+                      <label class="form-label">Email</label>
+                      <input type="email" placeholder="Email" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div class="form-group mb-4">
+                      <label class="form-label">Mã thủ thư</label>
+                      <input type="text" placeholder="Mã thủ thư" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div class="form-group mb-4">
+                      <label class="form-label">Số điện thoại</label>
+                      <input type="text" placeholder="Số điện thoại" class="form-control" >
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div class="form-group mb-6">
+                      <label class="form-label">Ngày sinh</label>
+                      <input type="text" placeholder="DD/MM/YYYY" class="form-control" >
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div class="form-group mb-6">
+                      <label class="form-label">Vị trí</label>
+                      <input type="number" placeholder="Vị trí" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group mb-4">
+                      <label class="form-label">Địa chỉ</label>
+                      <input type="text" placeholder="Địa chỉ" class="form-control" >
+                    </div>
+                  </div>
+                  <div class="col-md-12" style="text-align: right;">
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('../../elements/footer.ejs'); %>
+  </div>
+  <%- include('../../elements/scripts.ejs'); %>
+  <%- include('../../elements/dataScripts.ejs'); %>
+</body>
+
+</html>

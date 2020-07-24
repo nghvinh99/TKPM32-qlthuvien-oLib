@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs',{ title: title}); %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs'); %>
+    <%- include('../../navigator/navbar.ejs'); %>
+    <%- include('../../elements/breadcrumb.ejs'); %>
+    <section>
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header>
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="card">
+              <div class="card-header d-flex align-items-center">
+                <h4>Chi tiết</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Mã sách:</label>
+                  <div class="text">Mã sách</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Tên sách:</label>
+                  <div class="text">Tên sách</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Tác giả:</label>
+                  <div class="text">Tác giả</div>
+                </div>
+                <div class="row">
+                  <label class="col-sm-3 form-control-label">Thể loại:</label>
+                  <div class="text">Thể loại</div>
+                </div>
+              </div>
+              <form class="col-sm-12 card-body">
+                <div class="row" style="margin-bottom:2%;">
+                <div class="col-sm-12">
+                  <label class="form-control-label">Ngày nhận sách:</label>
+                  <input class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12" style="text-align: center;">
+                  <button type="button" onclick="window.history.back();" class="btn btn-secondary">
+                    Quay lại</button>
+                  <button type="button" class="btn btn-primary" onclick="location.href='/books/borrow-request'">
+                    Gửi yêu cầu</button>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <img src="/img/info.jpg" class="img-fluid">
+          </div>
+        </div>
+    </section>
+    <%- include('../../elements/footer.ejs'); %>
+  </div>
+  <%- include('../../elements/scripts.ejs'); %>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs', {title: title}) %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs') %>
+    <%- include('../../navigator/navbar.ejs') %>
+    <%- include('../../elements/breadcrumb.ejs') %>
+    <section>
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header class="row">
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <label for="name">Mã thẻ mượn:</label>
+                <div class="text" name="name">Mã thẻ mượn</div>
+              </div>
+              <div class="col-sm-3">
+                <label for="name">Tên độc giả:</label>
+                <div class="text" name="name">Ngô Bá Khá</div>
+              </div>
+              <div class="col-sm-3">
+                <label for="lendDate">Ngày mượn:</label>
+                <div class="text" name="lendDate">DD/MM/YYYY</div>
+              </div>
+              <div class="col-sm-3">
+                <label for="returnDate">Hạn trả:</label>
+                <div class="text" name="returnDate">DD/MM/YYYY</div>
+              </div>
+            </div>
+              <%- include('./detailInfoList.ejs'); %>
+            </div>
+          </div>
+        </div>
+    </section>
+    <%- include('../../elements/footer.ejs') %>
+    <%- include('../../elements/scripts.ejs') %>
+  </div>
+</body>
+
+</html>

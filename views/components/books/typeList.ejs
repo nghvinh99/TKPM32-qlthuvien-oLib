@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs',{ title: title}); %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs'); %>
+    <%- include('../../navigator/navbar.ejs'); %>
+    <%- include('../../elements/breadcrumb.ejs'); %>
+    <section>
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header class="row">
+          <div class="col-sm-8">
+            <%- include('../../elements/header.ejs') %>
+          </div>
+        </header>
+        <div class="card">
+          <div class="card-body">
+            <form class="row" style="margin-bottom: 2%;">
+              <label for="add" class="col-sm-2 form-control-label">Tên loại sách mới:</label>
+              <input type="text" name="add" class="col-sm-8 form-control">
+              <button type="button" class="col-sm-2 btn btn-primary"
+              onclick="alert('Hiện thông báo nếu trùng tên thể loại');">Thêm</button>
+            </form>
+            <div class="row">
+              <div class="col-sm-5">
+                <label for="search">Tìm kiếm</label>
+                <input type="text" name="search">
+              </div>
+              <div class="col-sm-3">
+                <label for="sortBy">Sắp xếp theo</label>
+                <select name="sortBy">
+                  <option value="">Tên loại</option>
+                  <option value="">Số lượng</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                <label for="sort">Thứ tự</label>
+                <select name="sort">
+                  <option value="">Tăng dần</option>
+                  <option value="">Giảm dần</option>
+                </select>
+              </div>
+            </div>
+            <%- include('./typeListMng.ejs'); %>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('../../elements/footer.ejs'); %>
+  </div>
+  <%- include('../../elements/scripts.ejs'); %>
+  <%- include('../../elements/dataScripts.ejs'); %>
+</body>
+
+</html>

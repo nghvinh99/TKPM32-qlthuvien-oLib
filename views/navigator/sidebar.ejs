@@ -1,0 +1,98 @@
+<!-- Side Navbar -->
+<nav class="side-navbar">
+    <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center">
+            <!-- Page info-->
+            <div class="sidenav-header-inner text-center">
+                <a href="/"><img src="/img/lib-icon.png" alt="person" class="img-fluid rounded-circle"></a>
+                <h2 class="h5" style="text-transform: none;">oLib</h2>
+                <span>Quản lí thư viện</span>
+            </div>
+            <!-- Small Brand information, appears on minimized sidebar-->
+            <div class="sidenav-header-logo">
+                <a href="/" class="brand-small text-center">
+                    <strong>O</strong></a>
+            </div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+            <h5 class="sidenav-heading">Menu</h5>
+
+            <ul id="side-main-menu" class="side-menu list-unstyled">
+
+                <li><a href="/">
+                        <i class="icon-home"></i>Trang chủ </a>
+                </li>
+
+                <li><a href="/books">
+                        <i class="icon-search"></i>Tìm kiếm sách</a>
+                </li>
+
+                <li><a href="/lendings/my-lendings">
+                        <i class="fa fa-exchange"></i>Mượn - trả</a>
+                </li>
+
+                <li><a href="/readers/my-account">
+                        <i class="icon-user"></i>Tài khoản</a>
+                </li>
+
+                <li><a href="/info">
+                        <i class="icon-mail"></i>Thông tin & liên hệ</a>
+                </li>
+            </ul>
+        </div>
+        <div class="admin-menu">
+            <h5 class="sidenav-heading">Menu</h5>
+            <ul id="side-main-menu" class="side-menu list-unstyled">
+
+                <li><a href="/">
+                        <i class="icon-home"></i>Tổng quan</a>
+                </li>
+
+                <li><a href="/books/management">
+                        <i class="fa fa-book"></i>Kho sách</a>
+                </li>
+
+                <li><a href="/readers">
+                        <i class="fa fa-id-card-o"></i>Độc giả</a>
+                </li>
+
+                <li><a href="/lendings">
+                        <i class="fa fa-exchange"></i>Mượn trả</a>
+                </li>
+
+                <li><a href="#statistic" aria-expanded="false" data-toggle="collapse"> <i class="icon-page"></i>Thống kê
+                        mượn - trả</a>
+                    <ul id="statistic" class="collapse list-unstyled ">
+                        <small>Thống kê sách</small>
+                        <li><a href="/statistics/books/imported-year">Thống kê theo năm nhập</a></li>
+                        <li><a href="/statistics/books/book-type">Thống kê theo thể loại</a></li>
+                        <small>Thống kê độc giả</small>
+                        <li><a href="/statistics/readers/month">Thống kê theo tháng</a></li>
+                        <li><a href="/statistics/readers/reader-type">Thống kê theo loại độc giả</a></li>
+                        <small>Thống kê lượt mượn - trả</small>
+                        <li><a href="/statistics/lendings/month">Thống kê theo tháng</a></li>
+                        <li><a href="/statistics/lendings/book-type">Thống kê theo thể loại</a></li>
+                        <li><a href="/statistics/lendings/reader-type">Thống kê theo loại độc giả</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/librarians/my-account">
+                        <i class="icon-user"></i>Tài khoản</a>
+                </li>
+            </ul>
+        </div>
+        <div class="admin-menu">
+            <h5 class="sidenav-heading">Admin</h5>
+            <ul id="side-main-menu" class="side-menu list-unstyled">
+                <li><a href="/librarians">
+                        <i class="fa fa-graduation-cap"></i>Thủ thư</a>
+                </li>
+                <li><a href="/rules">
+                    <i class="fa fa-check"></i>Quy định</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs', {title: title}) %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs') %>
+    <%- include('../../navigator/navbar.ejs') %>
+    <%- include('../../elements/breadcrumb.ejs') %>
+    <section class="forms">
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header>
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="row">
+          <div class="col-md-12 col-xl-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media align-items-center"><span style="background-image: url(/img/lib-icon.png)"
+                    class="avatar avatar-xl mr-3"></span>
+                  <div class="media-body overflow-hidden">
+                    <h5 class="card-text mb-0">Thông tin thư viện...</h5>
+                    <p class="card-text text-uppercase">Memora</p>
+                    <p class="card-text">
+
+                      nielsencobb@memora.com<br><abbr title="Phone">P: </abbr>+1 (851) 552-2735
+                    </p>
+                  </div>
+                </div><a href="" class="tile-link"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-xl-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="media align-items-center"><span style="background-image: url(/img/lib-icon.png)"
+                    class="avatar avatar-xl mr-3"></span>
+                  <div class="media-body overflow-hidden">
+                    <h5 class="card-text mb-0">Margret Cote</h5>
+                    <p class="card-text text-uppercase">Zilidium</p>
+                    <p class="card-text">
+
+                      margretcote@zilidium.com<br><abbr title="Phone">P: </abbr>+1 (893) 532-2218
+                    </p>
+                  </div>
+                </div><a href="" class="tile-link"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('../../elements/footer.ejs') %>
+    <%- include('../../elements/scripts.ejs') %>
+  </div>
+</body>
+
+</html>

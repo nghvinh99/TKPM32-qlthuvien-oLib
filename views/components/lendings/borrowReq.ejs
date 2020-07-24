@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs',{ title: title}); %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs'); %>
+    <%- include('../../navigator/navbar.ejs'); %>
+    <%- include('../../elements/breadcrumb.ejs'); %>
+    <section>
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header class="row">
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-2">
+                <label for="show">Hiển thị</label>
+                <select name="show">
+                  <option value="">10</option>
+                  <option value="">30</option>
+                  <option value="">50</option>
+                </select>
+              </div>
+              <div class="col-sm-5">
+                <label for="search">Tìm kiếm</label>
+                <input type="text" name="search">
+              </div>
+              <div class="col-sm-3">
+                <label for="sortBy">Sắp xếp theo</label>
+                <select name="sortBy">
+                  <option value="">Mã độc giả</option>
+                  <option value="">Mã sách</option>
+                  <option value="">Ngày yêu cầu</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                <label for="sort">Thứ tự</label>
+                <select name="sort">
+                  <option value="">Tăng dần</option>
+                  <option value="">Giảm dần</option>
+                </select>
+              </div>
+              <%- include('./borrowReqList.ejs'); %>
+              <%- include('./borrowReqListMng.ejs'); %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('../../elements/footer.ejs'); %>
+  </div>
+  <%- include('../../elements/scripts.ejs'); %>
+  <%- include('../../elements/dataScripts.ejs'); %>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../elements/head.ejs',{ title: title}); %>
+
+<body>
+  <div class="page">
+    <%- include('../../navigator/sidebar.ejs'); %>
+    <%- include('../../navigator/navbar.ejs'); %>
+    <%- include('../../elements/breadcrumb.ejs'); %>
+    <section>
+      <div class="container-fluid">
+        <!-- Page Header-->
+        <header>
+          <%- include('../../elements/header.ejs') %>
+        </header>
+        <div class="row">
+          <div class="col-sm-7">
+            <form class="card">
+              <div class="card-header d-flex align-items-center">
+                <h4>Chi tiết</h4>
+              </div>
+              <div class="card-body">
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Mã sách:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Tên sách:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Tác giả:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Thể loại:</label>
+                  <select class="col-sm-9 form-control">
+                    <option value="">a</option>
+                    <option value="">b</option>
+                    <option value="">c</option>
+                  </select>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Ngôn ngữ:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Năm xuất bản:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Năm nhập:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Nhà xuất bản:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Giá bìa:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Số lượng:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+                <div class="row" style="margin-bottom: 2%;">
+                  <label class="col-sm-3 form-control-label">Tình trạng:</label>
+                  <input class="col-sm-9 form-control"></input>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-sm-5">
+            <img src="/img/default-image.png" alt="Chọn ảnh bìa cho sách" class="img-fluid"
+            onclick="document.getElementById('coverImg').click();" 
+            style="cursor: pointer;" data-toggle="tooltip" title="Đổi ảnh đại diện">
+            <input type="file" id="coverImg">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" style="text-align: center;">
+            <button type="button" onclick="window.history.back();" class="btn btn-secondary">Quay
+              lại</button>
+            <button type="submit" class="btn btn-primary">Thêm sách</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('../../elements/footer.ejs'); %>
+  </div>
+  <%- include('../../elements/scripts.ejs'); %>
+</body>
+
+</html>
