@@ -11,6 +11,12 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      overview: {
+        type: Sequelize.STRING(1000)
+      },
+      image: {
+        type: Sequelize.STRING
+      },
       author: {
         type: Sequelize.STRING
       },

@@ -30,6 +30,7 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       accountType: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       readerType: {

@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const lending = sequelize.define('lending', {
     reader: DataTypes.INTEGER,
-    lendCard: DataTypes.INTEGER,
+    bookList: DataTypes.STRING,
     lendDate: DataTypes.DATE,
     expireDate: DataTypes.DATE,
     returnDate: DataTypes.DATE,

@@ -3,6 +3,8 @@
 module.exports = (sequelize, DataTypes) => {
   const book = sequelize.define('book', {
     name: DataTypes.STRING,
+    overview: DataTypes.STRING(1000),
+    image: DataTypes.STRING,
     author: DataTypes.STRING,
     language: DataTypes.STRING,
     publishedYear: DataTypes.INTEGER,

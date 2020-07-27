@@ -18,15 +18,9 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'NO ACTION',
       },
-      lendCard: {
+      bookList: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'lendingDetail',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'NO ACTION',
+        type: Sequelize.STRING
       },
       lendDate: {
         type: Sequelize.DATE
