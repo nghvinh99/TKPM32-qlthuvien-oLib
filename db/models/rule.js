@@ -10,6 +10,17 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     freezeTableName: true
   });
+
+  rule.getRule = (next) => {
+    rule.findAll({ 
+      raw: true 
+    }).then((res) => {
+      next(res)
+    }).catch((err) => {
+      next(err)
+    })
+  }
+
   rule.associate = function(models) {
     // associations can be defined here
   };
