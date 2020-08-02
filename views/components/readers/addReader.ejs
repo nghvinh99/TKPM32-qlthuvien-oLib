@@ -27,69 +27,77 @@
             </div>
           </div>
           <div class="col-lg-8">
-            <form class="card">
+            <form class="card" id="readerInfo">
               <div class="card-body">
                 <h3 class="card-title">Chi tiết</h3>
                 <div class="row">
                   <input type="file" id="avatarImg" style="display: none;"></input>
-                  <div class="col-md-4">
-                    <div class="form-group mb-4">
+                  <div class="col-md-6">
+                    <div class="form-group mb-6">
                       <label class="form-label">Họ tên</label>
-                      <input type="text" placeholder="Họ tên" value="Ngô Bá Khá" class="form-control">
+                      <input type="text" placeholder="Họ tên" class="form-control" id="name" required>
                     </div>
                   </div>
-                  <div class="col-sm-6 col-md-4">
-                    <div class="form-group mb-4">
-                      <label class="form-label">Tài khoản</label>
-                      <input type="text" placeholder="Username" value="Khabanh123" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
+                  <div class="col-sm-6 col-md-6">
                     <div class="form-group mb-4">
                       <label class="form-label">Email</label>
-                      <input type="email" placeholder="Email" class="form-control">
+                      <input type="email" placeholder="Email" class="form-control" id="email" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group mb-6">
+                      <label class="form-label">Mật khẩu</label>
+                      <input type="password" placeholder="Mật khẩu" class="form-control" id="password" required>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <div class="form-group mb-4">
+                      <label class="form-label">Xác nhận mật khẩu</label>
+                      <input type="password" placeholder="Xác nhận mật khẩu" class="form-control" id="pwdConfirm" required>
                     </div>
                   </div>
                   <div class="col-sm-6 col-md-6">
                     <div class="form-group mb-4">
                       <label class="form-label">Loại độc giả</label>
-                      <input type="email" placeholder="Type" class="form-control">
+                      <select class="form-control" id="readerType" required>
+                        <option selected hidden value="" >Chọn loại độc giả</option>
+                      </select>
                     </div>
                   </div>
                   <div class="col-sm-6 col-md-6">
                     <div class="form-group mb-4">
                       <label class="form-label">Số điện thoại</label>
-                      <input type="text" placeholder="Số điện thoại" class="form-control" >
+                      <input type="text" placeholder="Số điện thoại" class="form-control" id="phone">
                     </div>
                   </div>
                   <div class="col-sm-6 col-md-6">
                     <div class="form-group mb-6">
                       <label class="form-label">Ngày sinh</label>
-                      <input type="text" placeholder="DD/MM/YYYY" class="form-control" >
+                      <input type="date" placeholder="dd-mm-yyyy" value="" class="form-control" id="DoB">
                     </div>
                   </div>
                   <div class="col-sm-6 col-md-6">
                     <div class="form-group mb-6">
                       <label class="form-label">Mã học sinh</label>
-                      <input type="number" placeholder="Mã học sinh" class="form-control" >
+                      <input type="text" placeholder="Mã học sinh" class="form-control" id="studentID">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-6">
                       <label class="form-label">Ngày lập thẻ</label>
-                      <input type="number" placeholder="DD/MM/YYYY" class="form-control">
+                      <input id="createdAt" class="form-control" disabled>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mb-6">
                       <label class="form-label">Hạn thẻ</label>
-                      <input type="number" placeholder="DD/MM/YYYY" class="form-control">
+                      <input id="expiredAt" class="form-control" disabled>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group mb-4">
                       <label class="form-label">Địa chỉ</label>
-                      <input type="text" placeholder="Địa chỉ" class="form-control" >
+                      <input type="text" placeholder="Địa chỉ" id="address" class="form-control" >
                     </div>
                   </div>
                   <div class="col-md-12" style="text-align: right;">
@@ -106,6 +114,7 @@
   </div>
   <%- include('../../elements/scripts.ejs'); %>
   <%- include('../../elements/dataScripts.ejs'); %>
+  <script src="/javascripts/reader.js"></script>
 </body>
 
 </html>

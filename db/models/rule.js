@@ -10,6 +10,14 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     freezeTableName: true
   });
+
+  rule.getRule = async () => {
+    const allRule = await rule.findAll({
+      raw: true
+    });
+    return allRule[0];
+  }
+
   rule.associate = function(models) {
     // associations can be defined here
   };

@@ -8,5 +8,13 @@ module.exports = (sequelize, DataTypes) => {
   readerType.associate = function(models) {
     // associations can be defined here
   };
+
+  readerType.getAllType = async () => {
+    const allType = await readerType.findAll({
+      raw: true
+    });
+    return allType;
+  }
+
   return readerType;
 };

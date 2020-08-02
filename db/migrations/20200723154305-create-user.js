@@ -11,10 +11,16 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      avatar: {
+        type: Sequelize.STRING
+      },
       DoB: {
         type: Sequelize.DATE
       },
       phone: {
+        type: Sequelize.STRING
+      },
+      studentID: {
         type: Sequelize.STRING
       },
       address: {
@@ -42,6 +48,10 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'NO ACTION',
+      },
+      expiredAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       },
       isDeleted: {
         allowNull: false,

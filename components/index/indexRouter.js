@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const indexPresenter = require('./indexPresenter');
+
 /* GET home page. */
 router.get('/', (req, res, next) => {
   res.render('components/index/index', 
@@ -25,7 +27,6 @@ router.get('/info', (req, res, next) => {
     pageName: 'Thông tin liên hệ' });
 })
 
-router.delete('/', (req, res, next) => {
-  res.send("OK");
-})
+router.get('/get-all-rule', indexPresenter.getRule);
+
 module.exports = router;
