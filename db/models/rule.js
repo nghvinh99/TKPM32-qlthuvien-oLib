@@ -15,9 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     rule.findAll({ 
       raw: true 
     }).then((res) => {
-      next(res)
+      next(res, null)
     }).catch((err) => {
-      next(err)
+      next(null, err)
     })
   }
 

@@ -1,5 +1,7 @@
 'use strict';
 
+const { bookType } = require('./bookType');
+
 module.exports = (sequelize, DataTypes) => {
   const book = sequelize.define('book', {
     name: DataTypes.STRING,
@@ -33,8 +35,31 @@ module.exports = (sequelize, DataTypes) => {
     })
   }
 
+  book.findById = (BookId, next) => {
+    book.findAll({
+      where: {
+        id: BookId
+      },
+      include: [{
+        association: 'type',
+        attributes: ['name']
+      }],
+      raw: true
+    }).then((res) => {
+      next(res[0], null);
+    }).catch((err) => {
+      next(null, err)
+    })
+  }
+
   book.associate = function(models) {
     // associations can be defined here
+    book.belongsTo(models.bookType, {
+      as: 'type',
+      foreignKey: 'bookType',
+      target: 'id',
+      onDelete: 'CASCADE'
+    });
   };
   return book;
 };
