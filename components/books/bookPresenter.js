@@ -2,6 +2,18 @@ const { book } = require('../../db/models/');
 
 const presenter = {};
 
+presenter.getList = (req, res, next) => {
+    book.getList((book, Error) => {
+        res.render('components/books/index',
+            {
+                title: 'Kho sách',
+                pageName: 'Danh sách sách',
+                book: book
+            });
+        console.log(book[0].name);
+    });
+}
+
 presenter.findById = (req, res, next) => {
     const bookId = req.body.bookId;
     book.findById(bookId, (book, err) => {
@@ -13,7 +25,7 @@ presenter.findById = (req, res, next) => {
             console.log(book);
             res.send(book);
         }
-        else 
+        else
             res.send(false);
     })
 }

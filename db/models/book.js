@@ -24,16 +24,29 @@ module.exports = (sequelize, DataTypes) => {
 
   book.add = (data, next) => {
     book.create({
-      name:data.name,
-      author:data.author,
-      lost:0,
-      lending:0,
-      isDeleted:false,
-      bookType:data.bookType
+      name: data.name,
+      author: data.author,
+      lost: 0,
+      lending: 0,
+      isDeleted: false,
+      bookType: data.bookType
     }).then((err, res) => {
       next(err, res)
     })
   }
+
+  book.getList = (next) => {
+    book.findAll({
+      where: {
+        isDeleted: false
+      },
+      raw: true
+    }).then((res) => {
+      next(res, null)
+      //console.log(rs);
+    })
+  }
+
 
   book.findById = (BookId, next) => {
     book.findAll({
@@ -46,13 +59,13 @@ module.exports = (sequelize, DataTypes) => {
       }],
       raw: true
     }).then((res) => {
-      next(res[0], null);
+      next(res, null);
     }).catch((err) => {
       next(null, err)
     })
   }
 
-  book.associate = function(models) {
+  book.associate = function (models) {
     // associations can be defined here
     book.belongsTo(models.bookType, {
       as: 'type',
