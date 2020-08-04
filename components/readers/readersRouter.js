@@ -32,5 +32,7 @@ router.post('/add', readerPresenter.addNewReader);
 
 router.get('/get-type', readerPresenter.getReaderType);
 
+router.get('/get-user-list', readerPresenter.getReaderList);
+
 
 module.exports = router;

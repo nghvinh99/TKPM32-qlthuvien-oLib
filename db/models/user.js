@@ -1,4 +1,7 @@
 'use strict';
+
+const { Op } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   const user = sequelize.define('user', {
     name: DataTypes.STRING,
@@ -22,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     const newReader = await user.create({
       name: data.name,
       DoB: data.DoB,
+      studentID: data.studentID,
       phone: data.phone,
       address: data.address,
       email: data.email,
@@ -29,9 +33,33 @@ module.exports = (sequelize, DataTypes) => {
       verified: false,
       accountType: 2,
       readerType: data.readerType,
+      expiredAt: data.expiredAt,
       isDeleted: false,
     })
     return newReader;
+  }
+
+  user.getReaderList = async (filter) => {
+    let idSearch = parseInt(filter.search);
+    if (isNaN(idSearch))
+      idSearch = null;
+    const readerList = await user.findAll({
+      where: {
+        accountType: 2,
+        isDeleted: false,
+        [Op.or]: [
+          { name: {[Op.like]: '%' + filter.search + '%' }},
+          { email: {[Op.like]: '%' + filter.search + '%' }},
+          { id: {[Op.eq]: idSearch}}
+        ]
+      },
+      limit: filter.limit,
+      order: [
+        [filter.sortBy, filter.sort]
+      ],
+      raw: true
+    })
+    return readerList;
   }
 
   user.associate = function(models) {

@@ -25,33 +25,31 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-2">
-                <label for="show">Hiển thị</label>
-                <select name="show">
-                  <option value="">10</option>
-                  <option value="">30</option>
-                  <option value="">50</option>
+                <label for="limit">Hiển thị</label>
+                <select name="limit" id="limit">
+                  <option value="10">10</option>
+                  <option value="30">30</option>
+                  <option value="50">50</option>
                 </select>
               </div>
               <div class="col-sm-5">
                 <label for="search">Tìm kiếm</label>
-                <input type="text" name="search">
+                <input type="text" name="search" id="search">
               </div>
               <div class="col-sm-3">
                 <label for="sortBy">Sắp xếp theo</label>
-                <select name="sortBy">
-                  <option value="">Mã độc giả</option>
-                  <option value="">Họ tên</option>
-                  <option value="">Tài khoản</option>
-                  <option value="">Email</option>
-                  <option value="">Ngày lập thẻ</option>
-                  <option value="">Hạn thẻ</option>
+                <select name="sortBy" id="sortBy">
+                  <option value="id">Mã độc giả</option>
+                  <option value="name">Họ tên</option>
+                  <option value="email">Email</option>
+                  <option value="createdAt">Ngày lập thẻ</option>
                 </select>
               </div>
               <div class="col-sm-2">
                 <label for="sort">Thứ tự</label>
-                <select name="sort">
-                  <option value="">Tăng dần</option>
-                  <option value="">Giảm dần</option>
+                <select name="sort" id="sort">
+                  <option value="ASC">Tăng dần</option>
+                  <option value="DESC">Giảm dần</option>
                 </select>
               </div>
             </div>
@@ -64,6 +62,7 @@
   </div>
   <%- include('../../elements/scripts.ejs'); %>
   <%- include('../../elements/dataScripts.ejs'); %>
+  <script src="/javascripts/reader.js"></script>
 </body>
 
 </html>

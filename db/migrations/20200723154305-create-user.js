@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('user', {
@@ -27,12 +28,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       email: {
-        type: Sequelize.STRING
+        allowNull: false,
+        unique: true,
+        type: Sequelize.STRING        
       },
       password: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       verified: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       accountType: {
