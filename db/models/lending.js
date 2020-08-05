@@ -1,4 +1,12 @@
 'use strict';
+
+// const data = {
+//   readerId: $('#readerID').val(),
+//   lendDate: new Date(),
+//   expDate: expDate,
+//   bookListJson: JSON.stringify(bookList)
+// }
+
 module.exports = (sequelize, DataTypes) => {
   const lending = sequelize.define('lending', {
     reader: DataTypes.INTEGER,
@@ -12,12 +20,22 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true
   });
 
+  lending.getList = (filter, next) => {
+    lending.findAll({
+      raw: true
+    }).then((res) => {
+      next(res, null);
+    }).catch((err) => {
+      next(null, err);
+    })
+  }
+
   lending.addNewLending = (data, next) => {
     lending.create({
-      reader: data.reader,
-      bookList: data.bookList,
+      reader: data.readerId,
+      bookList: data.bookListJson,
       lendDate: data.lendDate,
-      expireDate: data.expireDate,
+      expireDate: data.expDate,
       returnDate: null,
       state: 0,
       isDeleted: false,

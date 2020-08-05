@@ -17,8 +17,8 @@ $(function() {
                     type: 'POST',
                     data: data,
                     dataType: 'json',
-                    success: (respond) => {
-                        alert("OK");
+                    success: (lending) => {
+                        console.log(lending);
                     }
                 })
             } else alert("Độc giả bạn êy");
@@ -142,7 +142,7 @@ $(function() {
                     success: (book) => {
                         if (book) {
                             appendBookList(book);    
-                            alert("Đã thêm sách " + book.name + " vào danh sách")
+                           // alert("Đã thêm sách " + book.name + " vào danh sách")
                         }
                         else
                             alert("Mã sách không tồn tại");

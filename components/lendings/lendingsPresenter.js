@@ -18,13 +18,15 @@ presenter.renderAddLending = (req, res, next) => {
 
 presenter.addNewLending = (req, res, next) => {
     const data = req.body;
-    res.end();
-    // lendingModel.addNewLending(data, (newLending, err) => {
-    //     if (err) 
-    //         res.send(err)
-    //     else
-    //         res.send(newLending)
-    // })
+    lending.addNewLending(data, (newLending, err) => {
+        console.log(newLending);
+        if (err) {
+            console.log(err)
+            res.send("Error")
+        } else {
+            res.send(newLending)
+        }
+    })
 }
 
 presenter.getLendingRule = (req, res, next) => {
@@ -46,6 +48,18 @@ presenter.findReaderById = (req, res, next) => {
             res.send("Error");
         } else {
             res.send({reader});
+        }
+    })
+}
+
+presenter.getList = (req, res, next) => {
+    const filter = {}
+    lending.getList(filter, (list, err) => {
+        if (err) {
+            console.log(err);
+            res.send("Error");
+        } else {
+            res.send(list);
         }
     })
 }
