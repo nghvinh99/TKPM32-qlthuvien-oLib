@@ -34,4 +34,6 @@ router.post('/add', lendingsPresenter.addNewLending);
 
 router.get('/rule', lendingsPresenter.getLendingRule);
 
+router.get('/reader/find-by-id', lendingsPresenter.findReaderById);
+
 module.exports = router;

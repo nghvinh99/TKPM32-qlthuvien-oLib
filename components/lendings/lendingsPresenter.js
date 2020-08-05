@@ -1,5 +1,6 @@
-const { lending } = require('../../db/models/')
-const { rule } = require('../../db/models/')
+const { lending } = require('../../db/models/');
+const { rule } = require('../../db/models/');
+const { user } = require('../../db/models');
 
 const presenter = {}
 
@@ -16,8 +17,7 @@ presenter.renderAddLending = (req, res, next) => {
 }
 
 presenter.addNewLending = (req, res, next) => {
-    const data = req.body.data;
-    console.log(data);
+    const data = req.body;
     res.end();
     // lendingModel.addNewLending(data, (newLending, err) => {
     //     if (err) 
@@ -28,12 +28,25 @@ presenter.addNewLending = (req, res, next) => {
 }
 
 presenter.getLendingRule = (req, res, next) => {
-    rule.getRule((rules) => {
-        const lendingRule = {
-            maxBook: rules[0].maxLendBookQuantity,
-            maxTime: rules[0].maxLendPeriod
+    rule.getRule((rules, err) => {
+        if (err) {
+            console.log(err);
+            res.send("Error");
+        } else {
+            res.send(rules);
         }
-        res.send(lendingRule);
+    })
+}
+
+presenter.findReaderById = (req, res, next) => {
+    const id = req.query.id;
+    user.findById(id, (reader, err) => {
+        if (err) {
+            console.log(err);
+            res.send("Error");
+        } else {
+            res.send({reader});
+        }
     })
 }
 

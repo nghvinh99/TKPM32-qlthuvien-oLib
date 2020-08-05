@@ -7,10 +7,9 @@ presenter.findById = (req, res, next) => {
     book.findById(bookId, (book, err) => {
         if (err) {
             console.log(err);
-            res.send("Problem occurred!");
+            res.send("Error");
         }
         else if (book) {
-            console.log(book);
             res.send(book);
         }
         else 

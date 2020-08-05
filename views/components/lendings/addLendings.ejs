@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <%- include('../../elements/head.ejs',{ title: title}); %>
-
+<style>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+</style>
 <body>
   <div class="page">
     <%- include('../../navigator/sidebar.ejs'); %>
@@ -13,7 +19,7 @@
         <header>
           <%- include('../../elements/header.ejs') %>
         </header>
-        <form class="card" method="POST">
+        <form class="card" id="lendCard">
           <div class="row">
             <div class="col-sm-12">
               <div class="card-header d-flex align-items-center">
@@ -22,7 +28,13 @@
               <div class="card-body">
                 <div class="row" style="margin-bottom: 2%;">
                   <label class="col-sm-3 form-control-label">Mã độc giả:</label>
-                  <input class="col-sm-9 form-control" id="readerID"></input>
+                  <input class="col-sm-9 form-control" type="number" style="-webkit-appearance: none;" id="readerID"></input>
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-9 text-danger" id="warning">
+                  </div>
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-9 text-sucess" id="identity">
+                  </div>
                 </div>
                 <div class="row" style="margin-bottom: 2%;">
                   <label class="col-sm-3 form-control-label">Ngày mượn:</label>
@@ -38,9 +50,8 @@
           </div>
           <div class="row">
             <div class="col-sm-12" style="text-align: center;margin: 2%">
-              <button type="button" onclick="window.history.back();" class="btn btn-secondary">Quay
-                lại</button>
-              <button type="submit" id="submitLending" class="btn btn-primary">Thêm thẻ mượn</button>
+              <button type="button" onclick="window.history.back();" class="btn btn-secondary">Quay lại</button>
+              <button type="submit" class="btn btn-primary">Thêm thẻ mượn</button>
             </div>
           </div>
         </form>
