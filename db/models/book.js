@@ -40,10 +40,16 @@ module.exports = (sequelize, DataTypes) => {
       where: {
         isDeleted: false
       },
+      include: [{
+        association: 'type',
+        attributes: ['name']
+      }],
       raw: true
     }).then((res) => {
       next(res, null)
       //console.log(rs);
+    }).catch((err) => {
+      next(null, err);
     })
   }
 
@@ -61,7 +67,7 @@ module.exports = (sequelize, DataTypes) => {
     }).then((res) => {
       next(res, null);
     }).catch((err) => {
-      next(null, err)
+      next(null, err);
     })
   }
 

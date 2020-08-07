@@ -5,8 +5,20 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     freezeTableName: true
   });
-  bookType.associate = function(models) {
+  bookType.associate = function (models) {
     // associations can be defined here
   };
+
+  bookType.getBookTypeList = (next) => {
+    book.findAll({
+      raw: true
+    }).then((res) => {
+      next(res, null)
+      console.log(res);
+    }).catch((err) => {
+      next(null, err);
+    })
+  }
+
   return bookType;
 };

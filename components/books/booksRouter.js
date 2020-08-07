@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const bookPresenter = require('./bookPresenter');
 const book = require('../../db/models/book');
+const bookType = require('../../db/models/booktype');
 
 /* GET home page. */
 /*router.get('/', (req, res, next) => {
@@ -16,7 +17,8 @@ const book = require('../../db/models/book');
     });
 });*/
 
-router.get('/', bookPresenter.getList);
+router.get('/', bookPresenter.getBookList);
+router.get('/type-list', bookPresenter.getBookTypeList);
 
 router.get('/advance-search', (req, res, next) => {
   res.render('components/books/advanceSearch',
