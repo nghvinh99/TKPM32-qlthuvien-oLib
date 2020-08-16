@@ -18,11 +18,11 @@ $(function() {
                     data: data,
                     dataType: 'json',
                     success: (lending) => {
-                        console.log(lending);
+                        window.location.replace("/lendings");
                     }
                 })
-            } else alert("Độc giả bạn êy");
-        } else alert("Thêm sách bạn êy");
+            } else alert("Thêm độc giả");
+        } else alert("Thêm sách vào thẻ mượn");
         return false;
     })
 })
@@ -142,7 +142,7 @@ $(function() {
                     success: (book) => {
                         if (book) {
                             appendBookList(book);    
-                           // alert("Đã thêm sách " + book.name + " vào danh sách")
+                            alert("Đã thêm sách " + book.name + " vào danh sách")
                         }
                         else
                             alert("Mã sách không tồn tại");

@@ -35,11 +35,9 @@ presenter.findById = (req, res, next) => {
             console.log(err);
             res.send("Error");
         }
-        else if (book) {
+        else {
             res.send(book);
         }
-        else
-            res.send(false);
     })
 }
 
