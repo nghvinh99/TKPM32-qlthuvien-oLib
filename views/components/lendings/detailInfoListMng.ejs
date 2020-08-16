@@ -9,30 +9,12 @@
         <th><i class="fa fa-cog"></i></th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>Memora</td>
-        <td><a href="/books/info/1" class="text-muted">Nielsen Cobb</a></td>
-        <td>nielsencobb@memora.com</td>
-        <td>+1 (851) 552-2735</td>
-        <td>
-          <a href="/books/remove/1" data-toggle="tooltip" title="Xóa" onclick="confirm('Xác nhận trước khi xóa');">
-            <i class="fa fa-trash"></i></a></td>
-      </tr>
-      <tr>
-        <td>Zilidium</td>
-        <td><a href="/books/info/1" class="text-muted">Margret Cote</a></td>
-        <td>margretcote@zilidium.com</td>
-        <td>+1 (893) 532-2218</td>
-        <td>
-          <a href="/books/remove/1" data-toggle="tooltip" title="Xóa" onclick="confirm('Xác nhận trước khi xóa');">
-            <i class="fa fa-trash"></i></a></td>
-      </tr>
+    <tbody id="bookList">
     </tbody>
   </table>
 </div>
 <div class="row">
-  <div class="col-sm-12" style="text-align: right;">
-    <a href=""><i class="fa fa-plus-square">Thêm sách</i><small>(hiện dialog input mã sách)</small></a>
+  <div class="col-sm-12" style="text-align: right;padding-right: 4%;padding-top:2%">
+    <a id="addBook" style="cursor: pointer;color:green"><i class="fa fa-plus-square">Thêm sách</i></a>
   </div>
 </div>

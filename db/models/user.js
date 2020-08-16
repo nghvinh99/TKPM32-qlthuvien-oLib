@@ -62,6 +62,22 @@ module.exports = (sequelize, DataTypes) => {
     return readerList;
   }
 
+  user.findById = (id, next) => {
+    user.findAll({
+      where: {
+        id: id
+      },
+      raw: true
+    }).then((res) => {
+      if (res.length == 0)
+        next(null , null);
+      else
+        next(res[0], null);
+    }).catch((err) => {
+      next(null, err);
+    })
+  }
+
   user.associate = function(models) {
     // associations can be defined here
   };

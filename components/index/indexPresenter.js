@@ -3,8 +3,14 @@ const { rule } = require('../../db/models');
 presenter = {};
 
 presenter.getRule = async (req, res, next) => {
-    const allRule = await rule.getRule();
-    res.send(allRule)
+    rule.getRule((allRule, err) => {
+        if (err) {
+            console.log(err);
+            res.send("Error");
+        } else {
+            res.send(allRule);
+        }
+    })
 }
 
 module.exports = presenter;

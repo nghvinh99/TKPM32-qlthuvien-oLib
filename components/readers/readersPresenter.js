@@ -27,13 +27,12 @@ presenter.addNewReader = async (req, res, next) => {
 
 presenter.getReaderList = async (req, res, next) => {
     const filter = req.query;
+    console.log(filter);
     try {
         const readerList = await user.getReaderList(filter);
         res.send({ readerList: readerList, err: null});
     } catch(err) {
         console.log(err);
-        console.log(parseInt(filter.search));
-        console.log(isNaN(parseInt(filter.search)));
         res.send({ readerList: null, err: err});
     }
 }

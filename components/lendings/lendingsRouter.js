@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const lendingsPresenter = require('./lendingsPresenter');
+
 /* GET users listing. */
 router.get('/my-lendings', function(req, res, next) {
   res.render('components/lendings/index', 
@@ -14,11 +16,7 @@ router.get('/my-lendings/info/:id', function(req, res, next) {
     pageName: 'Chi tiết thẻ mượn' });
 });
 
-router.get('/', function(req, res, next) {
-  res.render('components/lendings/index', 
-  { title: 'Quản lí mượn - trả',
-    pageName: 'Danh sách mượn trả' });
-});
+router.get('/', lendingsPresenter.renderIndex);
 
 router.get('/edit/:id', function(req, res, next) {
   res.render('components/lendings/editLendings', 
@@ -30,10 +28,12 @@ router.get('/remove/:id', function(req, res, next) {
   res.send("OK! Dù bấm OK hay Cancel thì luôn req link này --> cần xử lí khúc này khi code | Nếu không OK hay ko thì cũng xóa")
 });
 
-router.get('/add', (req,res,next)=>{
-  res.render('components/lendings/addLendings', 
-  { title: 'Thêm thẻ mượn sách',
-    pageName: 'Thêm thẻ mượn sách' });
-});
+router.get('/add', lendingsPresenter.renderAddLending);
+
+router.post('/add', lendingsPresenter.addNewLending);
+
+router.get('/reader/find-by-id', lendingsPresenter.findReaderById);
+
+router.get('/get-list', lendingsPresenter.getList);
 
 module.exports = router;

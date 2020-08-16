@@ -65,4 +65,6 @@ router.get('/remove/:id', (req,res,next) => {
   res.send("OK! Dù bấm OK hay Cancel thì luôn req link này --> cần xử lí khúc này khi code | Nếu không OK hay ko thì cũng xóa")
 });
 
+router.post('/find-by-id', bookPresenter.findById);
+
 module.exports = router;
