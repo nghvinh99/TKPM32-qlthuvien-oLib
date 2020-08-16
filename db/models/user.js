@@ -62,24 +62,39 @@ module.exports = (sequelize, DataTypes) => {
     return readerList;
   }
 
-  user.findById = (id, next) => {
-    user.findAll({
+  user.deleteReader = async (readerId) => {
+    const reader = await user.update({
+      isDeleted: true
+    }, {
       where: {
-        id: id
-      },
-      raw: true
-    }).then((res) => {
-      if (res.length == 0)
-        next(null , null);
-      else
-        next(res[0], null);
-    }).catch((err) => {
-      next(null, err);
+        id: readerId
+      }
     })
+    return reader;
+  }
+
+  user.findReaderById = async (readerId) => {
+    const reader = await user.findAll({
+      where: {
+        id: readerId,
+        isDeleted: false
+      },
+      include: [{
+        association: 'type',
+        attributes: ['name']
+      }],
+      raw: true
+    })
+    return reader[0];
   }
 
   user.associate = function(models) {
-    // associations can be defined here
+    user.belongsTo(models.readerType,{
+      as: 'type',
+      foreignKey: 'readerType',
+      target: 'id',
+      onDelete: 'CASCADE'
+    });
   };
   return user;
 };

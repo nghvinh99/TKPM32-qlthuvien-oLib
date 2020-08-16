@@ -32,22 +32,16 @@
                 <h3 class="card-title">Chi tiết</h3>
                 <div class="row">
                   <input type="file" id="avatarImg" style="display: none;"></input>
-                  <div class="col-md-5">
+                  <div class="col-sm-6 col-md-6">
                     <div class="form-group mb-4">
                       <label class="form-label">Họ tên</label>
-                      <input type="text" placeholder="Họ tên" value="Ngô Bá Khá" class="form-control">
+                      <input type="text" id="name" class="form-control">
                     </div>
                   </div>
-                  <div class="col-sm-6 col-md-3">
-                    <div class="form-group mb-4">
-                      <label class="form-label">Tài khoản</label>
-                      <input type="text" placeholder="Username" value="Khabanh123" class="form-control" disabled>
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
+                  <div class="col-sm-6 col-md-6">
                     <div class="form-group mb-4">
                       <label class="form-label">Email</label>
-                      <input type="email" placeholder="Email" class="form-control">
+                      <input type="email" id="email" class="form-control">
                     </div>
                   </div>
                   <div class="col-sm-6 col-md-6">
@@ -106,6 +100,8 @@
   </div>
   <%- include('../../elements/scripts.ejs'); %>
   <%- include('../../elements/dataScripts.ejs'); %>
+  <script src="/javascripts/reader-edit.js"></script>
+  <script src="/javascripts/reader-render.js"></script>
 </body>
 
 </html>

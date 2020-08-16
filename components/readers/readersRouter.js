@@ -10,21 +10,11 @@ router.get('/my-account', function(req, res, next) {
     pageName: 'Tài khoản' });
 });
 
-router.get('/', (req,res,next)=>{
-  res.render('components/readers/index', 
-  { title: 'Quản lí tài khoản',
-    pageName: 'Danh sách tài khoản' });
-});
+router.get('/', readerPresenter.renderIndex);
 
-router.get('/edit/:id', (req,res,next)=>{
-  res.render('components/readers/account', 
-  { title: 'Quản lí tài khoản',
-    pageName: 'Cập nhật thông tin tài khoản' });
-});
+router.get('/edit/', readerPresenter.renderEditReader);
 
-router.get('/remove/:id', (req,res,next)=>{
-  res.send("OK! Dù bấm OK hay Cancel thì luôn req link này --> cần xử lí khúc này khi code | Nếu không OK hay ko thì cũng xóa")
-});
+router.get('/delete', readerPresenter.deleteReader);
 
 router.get('/add', readerPresenter.renderAddReader);
 
@@ -34,5 +24,6 @@ router.get('/get-type', readerPresenter.getReaderType);
 
 router.get('/get-user-list', readerPresenter.getReaderList);
 
+router.get('/find-by-id', readerPresenter.findById);
 
 module.exports = router;

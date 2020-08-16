@@ -5,7 +5,6 @@ function formatDateString(DATE) {
     month = "0" + month;
     const year = d.getFullYear();
     const dateStr = date.substr(-2, 2) + "/" + month.substr(-2, 2) + "/" + year;
-    alert(dateStr);
     return dateStr;
 }
 
