@@ -40,6 +40,9 @@ module.exports = (sequelize, DataTypes) => {
       where: {
         isDeleted: false
       },
+      order: [
+        ['id', 'ASC']
+      ],
       include: [{
         association: 'type',
         attributes: ['name']
