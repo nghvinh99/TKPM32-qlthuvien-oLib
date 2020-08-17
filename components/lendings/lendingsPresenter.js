@@ -29,16 +29,15 @@ presenter.addNewLending = (req, res, next) => {
     })
 }
 
-presenter.findReaderById = (req, res, next) => {
+presenter.findReaderById = async (req, res, next) => {
     const id = req.query.id;
-    user.findById(id, (reader, err) => {
-        if (err) {
-            console.log(err);
-            res.send("Error");
-        } else {
-            res.send({reader});
-        }
-    })
+    const reader = await user.findReaderById(id);
+    try {
+        res.send({reader});
+    } catch (err) {
+        console.log(err);
+        res.send("Error");
+    }
 }
 
 presenter.getList = (req, res, next) => {
